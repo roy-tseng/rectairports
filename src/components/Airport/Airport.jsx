@@ -45,6 +45,7 @@ const Airport = (props) => {
     return (
         <>
              <>
+             <p/>
                 <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src="/images/building.png" />
                 <Card.Body>
@@ -58,7 +59,7 @@ const Airport = (props) => {
                 <Card.Footer>
                     <small className="text-muted">{coordinate}</small>
                 </Card.Footer>
-                </Card><p/>
+                </Card>
             </>
         </>
     )
