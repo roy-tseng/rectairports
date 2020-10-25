@@ -3,6 +3,7 @@ import Airport from '../../components/Airport/Airport'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import { BrowserRouter as Router, Route} from 'react-router-dom'
 
 function getAirPortInfo() {
     
@@ -33,23 +34,26 @@ const AirportMap = () => {
     useEffect(()=>{
       setAirPorts(getAirPortInfo());
     },[]);
-  
+
     function getAirPorts(){
       return (
           <>
             {
-              airports != null && airports.map((airport,index) => <Col><Airport info={airport}/></Col> )
+              airports != null && airports.map((airport,index) => <Col><Airport key={index} {...airport}/></Col> )
             }
           </>
       )
     }
     
     return (
+      <Router>
         <Container fluid>
           <Row >
             {getAirPorts()}
           </Row>
         </Container>
+        <Route path="/airport" component={Airport} />
+      </Router>
     );
 }
 

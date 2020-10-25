@@ -8,11 +8,11 @@ import {Card, Button, Badge} from 'react-bootstrap'
 
 const Airport = (props) => {
 
-    const [name, SetName] = useState(props.info.name);
-    const [buildings, setBuildings] = useState(props.info.buildings);
-    const [country, setCountry] = useState(props.info.country);
+    const [name, SetName] = useState(props.name);
+    const [buildings, setBuildings] = useState(props.buildings);
+    const [country, setCountry] = useState(props.country);
     const [isLoaded, setLoad]=useState(false)
-    const [coordinate, setCoordinate] = useState(props.info.coordinate);
+    const [coordinate, setCoordinate] = useState(props.coordinate);
     const [airlines, setAirLines] = useState(null);
     const [enterTitle, setEnterTitle] = useState('進入');
 
@@ -63,6 +63,24 @@ const Airport = (props) => {
             </>
         </>
     )
+}
+
+export const AirportField = (props) => {
+
+    const [airportName, setAirPortName] = useState('')
+
+
+    useEffect(
+        (props) => {
+            setAirPortName(props.name)
+        }, []
+    );
+
+
+    return(
+        <>
+        </>
+    );
 }
 
 export default Airport
